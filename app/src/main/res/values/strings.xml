@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Controle de Portaria</string>
+    <string name="titulo_tela">Novo Usuário</string>
+    <string name="cadastrar_usuario">Cadastrar Usuário</string>
+    <string name="title_activity_login">Logar</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Logar ou registrar</string>
+    <string name="action_sign_in_short">Logar</string>
+    <string name="error_invalid_email">Email inválido</string>
+    <string name="error_invalid_password">Senha curta</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Esse campo é obrigatório</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="criar_conta">Criar conta</string>
+    <string name="registrar_entrada">Registrar Entrada</string>
+    <string name="registrar_saida">Registrar Saida</string>
+    <string name="titulo_registrar_entrada">Registrar Entrada</string>
+    <string name="botao_registrar_cartao" />
+    <string name="btn_registrar_entrada" >Registrar Entrada</string>
+    <string name="botao_registrar_foto">Registrar Foto</string>
+    <string name="botao_logar_google">Entrar com o Google</string>
+</resources>

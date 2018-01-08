@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1049324216160",
+    "firebase_url": "https://controleportaria-fdfaf.firebaseio.com",
+    "project_id": "controleportaria-fdfaf",
+    "storage_bucket": "controleportaria-fdfaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049324216160:android:6321a4f663e52e15",
+        "android_client_info": {
+          "package_name": "com.movimentomaker.controledeportaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049324216160-c878g9ure85o4abu5pbib955fhfehq5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.movimentomaker.controledeportaria",
+            "certificate_hash": "02bcc7d3faa952a15fc2c04cff8a5b4dfb37cbc6"
+          }
+        },
+        {
+          "client_id": "1049324216160-9c5c9cje4d2ssjbllcuo5kdmkkkf7htd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc9Sm52CaQUzV6o8Cy2OtYN2weSuuS5iE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049324216160-9c5c9cje4d2ssjbllcuo5kdmkkkf7htd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
