@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ControledePortaria.iml" filepath="$PROJECT_DIR$/ControledePortaria.iml" />
+      <module fileurl="file://C:\Projetos\ProjetosAndroid\ControledePortaria\ControledePortaria.iml" filepath="C:\Projetos\ProjetosAndroid\ControledePortaria\ControledePortaria.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Projetos\ProjetosAndroid\ControledePortaria\app\app.iml" filepath="C:\Projetos\ProjetosAndroid\ControledePortaria\app\app.iml" />
     </modules>
   </component>
 </project>

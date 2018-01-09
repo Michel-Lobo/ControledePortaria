@@ -9,7 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import models.Registro;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnRegisrarEntrada;
@@ -17,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private Button btnSair;
     private TextView txtUsuarioLogado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             btnSair = findViewById(R.id.btnSair);
             txtUsuarioLogado = findViewById(R.id.txtUsuarioLogado);
             SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.nome_arquivo_setings).toString(), 0);
-            txtUsuarioLogado.setText(sharedPreferences.getString("idUser", "0"));
+            txtUsuarioLogado.setText(sharedPreferences.getString("idUsuario", "0"));
             btnRegisrarEntrada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -50,5 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
 
 }
