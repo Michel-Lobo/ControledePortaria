@@ -24,4 +24,6 @@
     <string name="btn_registrar_entrada" >Registrar Entrada</string>
     <string name="botao_registrar_foto">Registrar Foto</string>
     <string name="botao_logar_google">Entrar com o Google</string>
+
+    <string name="nome_arquivo_setings">setings</string>
 </resources>

@@ -2,10 +2,12 @@ package com.movimentomaker.controledeportaria;
 
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnRegistrarSaida;
     private FirebaseAuth auth;
     private Button btnSair;
+    private TextView txtUsuarioLogado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
             btnRegisrarEntrada = findViewById(R.id.btnRegistrarEntrada);
             btnRegistrarSaida = findViewById(R.id.btnRegistrarSaida);
             btnSair = findViewById(R.id.btnSair);
+            txtUsuarioLogado = findViewById(R.id.txtUsuarioLogado);
+            SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.nome_arquivo_setings).toString(), 0);
+            txtUsuarioLogado.setText(sharedPreferences.getString("idUser", "0"));
             btnRegisrarEntrada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -40,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 }
             });
+
+
         }
     }
 

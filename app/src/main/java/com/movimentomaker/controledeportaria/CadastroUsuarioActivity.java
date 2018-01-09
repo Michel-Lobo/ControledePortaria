@@ -1,6 +1,8 @@
 package com.movimentomaker.controledeportaria;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,6 +28,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase db;
     private DatabaseReference dbRef;
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,19 +52,26 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        String idUser = task.getResult().getUser().getUid();
+                                        String nomeArquivo = getResources().getString(R.string.nome_arquivo_setings);
                                         db = FirebaseDatabase.getInstance();
-                                        dbRef = db.getReference("Usuario");
-                                        dbRef.setValue(task.getResult().getUser().getUid());
+                                        dbRef = db.getReference("Usuario").child(idUser);
+
                                         Usuario usuario = new Usuario();
                                         usuario.setId(task.getResult().getUser().getUid());
                                         usuario.setEmail(txtEmail.getText().toString());
                                         usuario.setNome(txtNome.getText().toString());
-                                        dbRef.child(task.getResult().getUser().getUid()).setValue(usuario);
-
-                                        Log.i("criado", task.getResult().getUser().getUid());
+                                        dbRef.setValue(usuario);
+                                        sharedPreferences = getSharedPreferences(nomeArquivo, 0);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("idUsuario", idUser);
+                                        editor.commit();
+                                        Toast.makeText(CadastroUsuarioActivity.this, "Usuário criado com sucesso", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(CadastroUsuarioActivity.this, MainActivity.class);
+                                        startActivity(intent);
                                     } else {
 
-                                        Log.i("problema", task.getException().getMessage());
+                                        Toast.makeText(CadastroUsuarioActivity.this, "Usuário criado com sucesso", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
